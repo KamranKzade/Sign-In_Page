@@ -5,20 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sign_In_Page"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" 
+        Height="600"
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Background="Bisque" Grid.Column="0">
+        <Grid  Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2.5*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Grid Background="SpringGreen" Grid.Row="0">
+            <!-- Images Name Job Post Messages Members Buttons-->
+            <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="3*"/>
@@ -35,13 +40,14 @@
                        FontSize="20"
                        Foreground="DimGray"/>
 
+                <!-- Images Name Job -->
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="4*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    
+
                     <Ellipse Grid.Row="0" Margin="20 10">
                         <Ellipse.Fill>
                             <ImageBrush ImageSource="/alex.png"/>
@@ -54,7 +60,7 @@
                            Name="FullName"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
- 
+
                     <Label Grid.Row="2" 
                            Content="Football"
                            Name="Job"
@@ -63,7 +69,7 @@
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
                 </Grid>
-                
+
                 <!-- Post, Messages, members -->
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
@@ -72,8 +78,8 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Border Grid.Column="0" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
-                    <Border Grid.Column="1" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
+                    <Border  Grid.Column="0" Height="45" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
+                    <Border Grid.Column="1" Height="45" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
                     <Grid Grid.Column="0" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -81,7 +87,7 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Row="0"
-                               VerticalAlignment="Top"
+                               VerticalAlignment="Bottom"
                                HorizontalAlignment="Center"
                                Content="86"
                                Name="Posts"
@@ -103,7 +109,7 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Row="0"
-                               VerticalAlignment="Top"
+                               VerticalAlignment="Bottom"
                                HorizontalAlignment="Center"
                                Content="1,1K"
                                Name="Messages"
@@ -125,7 +131,7 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Row="0"
-                               VerticalAlignment="Top"
+                               VerticalAlignment="Bottom"
                                HorizontalAlignment="Center"
                                Content="4,5K"
                                Name="Members"
@@ -133,7 +139,7 @@
                                FontSize="14"       
                                />
                         <Label Grid.Row="1"
-                               VerticalAlignment="Center"
+                               VerticalAlignment="Top"
                                HorizontalAlignment="Center"
                                Content="members"
                                FontWeight="Medium"
@@ -149,18 +155,19 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
+                    
                     <Border Grid.Row="0"
                             VerticalAlignment="Center"
                             BorderBrush="Blue"
                             CornerRadius="20"
                             Height="30"
                             Width="180"
-                            BorderThickness="2">
+                            BorderThickness="3">
 
                         <Button BorderThickness="0"
                                 VerticalAlignment="Center"
                                 Background="Transparent"
-                                Foreground="WhiteSmoke"
+                                Foreground="Blue"
                                 Content="Upload New Avatar"/>
                     </Border>
                     <Border Grid.Row="1"
@@ -180,7 +187,61 @@
                 </Grid>
 
             </Grid>
+            
+            <!-- Slogan && Status -->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
 
+                <!-- Slogan -->
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"
+                           Name="Slogan"
+                           Content="Your Slogan"
+                           FontWeight="Black"
+                           VerticalAlignment="Bottom"
+                           HorizontalAlignment="Center"/>
+                    <Label Grid.Row="1"
+                           Content="(Just start typing to edit)"
+                           Foreground="LightGray"
+                           FontWeight="Black"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"
+                       Name="Status"
+                       Content="Ən Boyuk Fenerbagce"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"
+                       Foreground="LightGray"/>
+                    
+                    <Border Margin="5"
+                            BorderBrush="Transparent" 
+                            Grid.Row="1"
+                            BorderThickness="1" >
+
+                        <Image Source="/nem.png"
+                               Stretch="Uniform"/>
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <Border Grid.Row="0" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
+            <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0 2 2 0"/>
         </Grid>
 
 
