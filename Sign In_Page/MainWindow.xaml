@@ -248,7 +248,7 @@
                 <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0 2 2 0"/>
             </Grid>
 
-            <Grid Background="Violet" Grid.Column="1">
+            <Grid  Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.5*"/>
                     <RowDefinition Height="2*"/>
