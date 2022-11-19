@@ -10,29 +10,33 @@
         Width="800"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
-        </Grid.ColumnDefinitions>
+    <Border BorderBrush="DimGray"
+            Margin="10"
+            BorderThickness="2">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
 
-        <Grid  Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2.5*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <!-- Images Name Job Post Messages Members Buttons-->
-            <Grid Grid.Row="0">
+            <!-- Images && Name && Status && Posts && messages && members && Button -->
+            <Grid  Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="3*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2.5*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <!-- Profile -->
-                <Label Grid.Row="0"
+                <!-- Images Name Job Post Messages Members Buttons-->
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Profile -->
+                    <Label Grid.Row="0"
                        Content="Your Profile"
                        FontWeight="Medium"
                        VerticalAlignment="Center"
@@ -40,53 +44,53 @@
                        FontSize="20"
                        Foreground="DimGray"/>
 
-                <!-- Images Name Job -->
-                <Grid Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="4*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
+                    <!-- Images Name Job -->
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-                    <Ellipse Grid.Row="0" Margin="20 10">
-                        <Ellipse.Fill>
-                            <ImageBrush ImageSource="/alex.png"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
+                        <Ellipse Grid.Row="0" Margin="20 10">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/alex.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
 
-                    <Label Grid.Row="1" 
+                        <Label Grid.Row="1" 
                            Content="Alex De Souza"
                            FontWeight="Black"
                            Name="FullName"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
 
-                    <Label Grid.Row="2" 
+                        <Label Grid.Row="2" 
                            Content="Football"
                            Name="Job"
                            FontWeight="Medium"
                            Foreground="DimGray"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
-                </Grid>
+                    </Grid>
 
-                <!-- Post, Messages, members -->
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                    <!-- Post, Messages, members -->
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Border  Grid.Column="0" Height="45" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
-                    <Border Grid.Column="1" Height="45" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
-                    <Grid Grid.Column="0" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+                        <Border  Grid.Column="0" Height="45" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
+                        <Border Grid.Column="1" Height="45" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
+                        <Grid Grid.Column="0" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-                        <Label Grid.Row="0"
+                            <Label Grid.Row="0"
                                VerticalAlignment="Bottom"
                                HorizontalAlignment="Center"
                                Content="86"
@@ -94,21 +98,21 @@
                                FontWeight="Bold"
                                FontSize="14"       
                                />
-                        <Label Grid.Row="1"
+                            <Label Grid.Row="1"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Center"
                                Content="posts"
                                FontWeight="Medium"
                                Foreground="DimGray"
                                />
-                    </Grid>
-                    <Grid Grid.Column="1" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+                        </Grid>
+                        <Grid Grid.Column="1" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-                        <Label Grid.Row="0"
+                            <Label Grid.Row="0"
                                VerticalAlignment="Bottom"
                                HorizontalAlignment="Center"
                                Content="1,1K"
@@ -116,21 +120,21 @@
                                FontWeight="Bold"
                                FontSize="14"       
                                />
-                        <Label Grid.Row="1"
+                            <Label Grid.Row="1"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Center"
                                Content="messages"
                                FontWeight="Medium"
                                Foreground="DimGray"
                                />
-                    </Grid>
-                    <Grid Grid.Column="2" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+                        </Grid>
+                        <Grid Grid.Column="2" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-                        <Label Grid.Row="0"
+                            <Label Grid.Row="0"
                                VerticalAlignment="Bottom"
                                HorizontalAlignment="Center"
                                Content="4,5K"
@@ -138,25 +142,25 @@
                                FontWeight="Bold"
                                FontSize="14"       
                                />
-                        <Label Grid.Row="1"
+                            <Label Grid.Row="1"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Center"
                                Content="members"
                                FontWeight="Medium"
                                Foreground="DimGray"
                                />
+                        </Grid>
+
                     </Grid>
 
-                </Grid>
+                    <!-- Button -->
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-                <!-- Button -->
-                <Grid Grid.Row="3">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    
-                    <Border Grid.Row="0"
+                        <Border Grid.Row="0"
                             VerticalAlignment="Center"
                             BorderBrush="Blue"
                             CornerRadius="20"
@@ -164,13 +168,13 @@
                             Width="180"
                             BorderThickness="3">
 
-                        <Button BorderThickness="0"
+                            <Button BorderThickness="0"
                                 VerticalAlignment="Center"
                                 Background="Transparent"
                                 Foreground="Blue"
                                 Content="Upload New Avatar"/>
-                    </Border>
-                    <Border Grid.Row="1"
+                        </Border>
+                        <Border Grid.Row="1"
                             VerticalAlignment="Center"
                             BorderBrush="WhiteSmoke"
                             CornerRadius="20"
@@ -178,73 +182,659 @@
                             Width="90"
                             BorderThickness="2">
 
-                        <Button BorderThickness="0"
+                            <Button BorderThickness="0"
                                 VerticalAlignment="Center"
                                 Background="Transparent"
                                 Foreground="DimGray"
                                 Content="Delete"/>
-                    </Border>
+                        </Border>
+                    </Grid>
+
                 </Grid>
 
-            </Grid>
-            
-            <!-- Slogan && Status -->
-            <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="2*"/>
-                </Grid.RowDefinitions>
-
-                <!-- Slogan -->
-                <Grid Grid.Row="0">
+                <!-- Slogan && Status -->
+                <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0"
+                    <!-- Slogan -->
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
                            Name="Slogan"
                            Content="Your Slogan"
                            FontWeight="Black"
                            VerticalAlignment="Bottom"
                            HorizontalAlignment="Center"/>
-                    <Label Grid.Row="1"
+                        <Label Grid.Row="1"
                            Content="(Just start typing to edit)"
                            Foreground="LightGray"
                            FontWeight="Black"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0"
+                        <Label Grid.Row="0"
                        Name="Status"
                        Content="Ən Boyuk Fenerbagce"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        FontWeight="Bold"
                        Foreground="LightGray"/>
-                    
-                    <Border Margin="5"
+
+                        <Border Margin="5"
                             BorderBrush="Transparent" 
                             Grid.Row="1"
                             BorderThickness="1" >
 
-                        <Image Source="/nem.png"
+                            <Image Source="/nem.png"
                                Stretch="Uniform"/>
-                    </Border>
+                        </Border>
+                    </Grid>
                 </Grid>
+
+                <Border Grid.Row="0" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
+                <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0 2 2 0"/>
             </Grid>
 
-            <Border Grid.Row="0" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
-            <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0 2 2 0"/>
+            <Grid Background="Violet" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Settings -->
+                <Border Grid.Row="0" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                <Label Grid.Row="0"
+                       Content="Edit Your Personal Settings"
+                       FontWeight="Medium"
+                       Foreground="DimGray"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Padding="15 0"
+                       FontSize="24"
+                       />
+
+                <!-- FullNAme && Title && Email -->
+                <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- FullName -->
+                    <Grid Grid.Row="0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Foreground="Black"
+                               FontWeight="Bold"
+                               FontSize="18"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Content="Full Name"/>
+                        <Border Grid.Column="1" 
+                                Margin="15"
+                                BorderBrush="DimGray" 
+                                BorderThickness="2"
+                                CornerRadius="30">
+                            <TextBox Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     BorderThickness="0"
+                                     FontSize="18"
+                                     Padding="22 0"
+                                     Text="Enter Your FullName here"
+                                     HorizontalAlignment="Left"/>
+
+
+                        </Border>
+                    </Grid>
+
+                    <!-- Title -->
+                    <Grid Grid.Row="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Foreground="Black"
+                               FontWeight="Bold"
+                               FontSize="18"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Content="Title"/>
+                        <Border Grid.Column="1" 
+                                Margin="15"
+                                BorderBrush="DimGray" 
+                                BorderThickness="2"
+                                CornerRadius="30">
+                            <TextBox Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     BorderThickness="0"
+                                     FontSize="18"
+                                     Padding="22 0"
+                                     Text="Enter Your Title here"
+                                     HorizontalAlignment="Left"/>
+
+
+                        </Border>
+                    </Grid>
+
+                    <!-- Email -->
+                    <Grid Grid.Row="2" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Foreground="Black"
+                               FontWeight="Bold"
+                               FontSize="18"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Content="Email"/>
+                        <Border Grid.Column="1" 
+                                Margin="15"
+                                BorderBrush="DimGray" 
+                                BorderThickness="2"
+                                CornerRadius="30">
+                            <TextBox Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     BorderThickness="0"
+                                     FontSize="18"
+                                     Padding="22 0"
+                                     Text="Enter Your Email here"
+                                     HorizontalAlignment="Left"/>
+
+
+                        </Border>
+                    </Grid>
+
+                </Grid>
+
+                <!-- Birthday -->
+                <Border Grid.Row="2" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"
+                           Foreground="Black"
+                           FontWeight="Bold"
+                           FontSize="18"
+                           VerticalAlignment="Bottom"
+                           HorizontalAlignment="Center"
+                           Content="Birthday"/>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ComboBox Grid.Column="0"
+                                  Name="Day_combo"
+                                  Background="Transparent" 
+                                  BorderThickness="0"
+                                  VerticalContentAlignment="Center"
+                                  SelectedIndex="0"
+                                  HorizontalContentAlignment="Center"
+                                  Margin="10">
+                            <ComboBox.Style>
+                                <Style TargetType="{x:Type ComboBox}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ComboBox}">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition MaxWidth="18"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBox Name="PART_EditableTextBox"
+                                                             IsEnabled="False"
+                                                             Style="{StaticResource ComboBoxTextBoxStyle}"
+                                                             Padding="5,0,0,0"
+                                                             Height="{TemplateBinding Height}"/>
+                                                    <ToggleButton Grid.Column="1" Margin="0"
+                                                                  Height="{TemplateBinding Height}"
+                                                                  Style="{StaticResource ComboBoxButtonStyle}"                                                                          
+                                                                  Focusable="False"
+                                                                  IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                  ClickMode="Press">
+                                                        <Path Grid.Column="1"
+                                                              HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center"
+                                                              Data="M 0 0 L 4 4 L 8 0 Z"
+                                                              Fill="DodgerBlue" />
+                                                    </ToggleButton>
+                                                    <ContentPresenter Name="ContentSite"
+                                                                      Content="{TemplateBinding SelectionBoxItem}"
+                                                                      ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                                                      ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                                                      VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"
+                                                                      Margin="5,0,0,0"/>
+                                                    <Popup Name="Popup"
+                                                           Placement="Bottom"
+                                                           IsOpen="{TemplateBinding IsDropDownOpen}"
+                                                           AllowsTransparency="True" 
+                                                           Focusable="False"
+                                                           PopupAnimation="Slide">
+                                                        <Grid Name="DropDown"
+                                                              SnapsToDevicePixels="True"                
+                                                              MinWidth="{TemplateBinding ActualWidth}"
+                                                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                            <Border 
+                                                                    x:Name="DropDownBorder"
+                                                                    BorderThickness="1"
+                                                                    CornerRadius="5"
+                                                                    Background="Azure"
+                                                                    BorderBrush="Black"/>
+                                                            <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                                                <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                            </ScrollViewer>
+                                                        </Grid>
+                                                    </Popup>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.Style>
+                        </ComboBox>
+
+                        <ComboBox Grid.Column="1"
+                                  Name="Month_combo"
+                                  Background="Transparent" 
+                                  BorderThickness="0"
+                                  VerticalContentAlignment="Center"
+                                  SelectedIndex="0"
+                                  HorizontalContentAlignment="Center"
+                                  Margin="10">
+                            <ComboBox.Style>
+                                <Style TargetType="{x:Type ComboBox}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ComboBox}">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition MaxWidth="18"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBox Name="PART_EditableTextBox"
+                                                             IsEnabled="False"
+                                                             Style="{StaticResource ComboBoxTextBoxStyle}"
+                                                             Padding="5,0,0,0"
+                                                             Height="{TemplateBinding Height}"/>
+                                                    <ToggleButton Grid.Column="1" Margin="0"
+                                                                  Height="{TemplateBinding Height}"
+                                                                  Style="{StaticResource ComboBoxButtonStyle}"                                                                          
+                                                                  Focusable="False"
+                                                                  IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                  ClickMode="Press">
+                                                        <Path Grid.Column="1"
+                                                              HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center"
+                                                              Data="M 0 0 L 4 4 L 8 0 Z"
+                                                              Fill="DodgerBlue" />
+                                                    </ToggleButton>
+                                                    <ContentPresenter Name="ContentSite"
+                                                                      Content="{TemplateBinding SelectionBoxItem}"
+                                                                      ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                                                      ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                                                      VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"
+                                                                      Margin="5,0,0,0"/>
+                                                    <Popup Name="Popup"
+                                                           Placement="Bottom"
+                                                           IsOpen="{TemplateBinding IsDropDownOpen}"
+                                                           AllowsTransparency="True" 
+                                                           Focusable="False"
+                                                           PopupAnimation="Slide">
+                                                        <Grid Name="DropDown"
+                                                              SnapsToDevicePixels="True"                
+                                                              MinWidth="{TemplateBinding ActualWidth}"
+                                                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                            <Border 
+                                                                    x:Name="DropDownBorder"
+                                                                    BorderThickness="1"
+                                                                    CornerRadius="5"
+                                                                    Background="Azure"
+                                                                    BorderBrush="Black"/>
+                                                            <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                                                <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                            </ScrollViewer>
+                                                        </Grid>
+                                                    </Popup>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.Style>
+                        </ComboBox>
+
+                        <ComboBox Grid.Column="2"
+                                  Name="Year_combo"
+                                  VerticalContentAlignment="Center"
+                                  SelectedIndex="0"
+                                  HorizontalContentAlignment="Center"
+                                  Background="Transparent" 
+                                  BorderThickness="0"
+                                  Margin="10">
+                            <ComboBox.Style>
+                                <Style TargetType="{x:Type ComboBox}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ComboBox}">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition MaxWidth="18"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBox Name="PART_EditableTextBox"
+                                                             Style="{StaticResource ComboBoxTextBoxStyle}"
+                                                             Padding="5,0,0,0"
+                                                             IsEnabled="False"
+                                                             Height="{TemplateBinding Height}"/>
+                                                    <ToggleButton Grid.Column="1" Margin="0"
+                                                                  Height="{TemplateBinding Height}"
+                                                                  Style="{StaticResource ComboBoxButtonStyle}"                                                                          
+                                                                  Focusable="False"
+                                                                  IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                  ClickMode="Press">
+                                                        <Path Grid.Column="1"
+                                                              HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center"
+                                                              Data="M 0 0 L 4 4 L 8 0 Z"
+                                                              Fill="DodgerBlue" />
+                                                    </ToggleButton>
+                                                    <ContentPresenter Name="ContentSite"
+                                                                      Content="{TemplateBinding SelectionBoxItem}"
+                                                                      ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                                                      ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                                                      VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"
+                                                                      Margin="5,0,0,0"/>
+                                                    <Popup Name="Popup"
+                                                           Placement="Bottom"
+                                                           IsOpen="{TemplateBinding IsDropDownOpen}"
+                                                           AllowsTransparency="True" 
+                                                           Focusable="False"
+                                                           PopupAnimation="Slide">
+                                                        <Grid Name="DropDown"
+                                                              SnapsToDevicePixels="True"                
+                                                              MinWidth="{TemplateBinding ActualWidth}"
+                                                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                            <Border 
+                                                                    x:Name="DropDownBorder"
+                                                                    BorderThickness="1"
+                                                                    CornerRadius="5"
+                                                                    Background="Azure"
+                                                                    BorderBrush="Black"/>
+                                                            <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                                                <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                            </ScrollViewer>
+                                                        </Grid>
+                                                    </Popup>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.Style>
+                        </ComboBox>
+                    </Grid>
+
+
+
+                </Grid>
+
+                <!-- Country Region -->
+                <Border Grid.Row="3" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Country -->
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               Foreground="Black"
+                               FontWeight="Bold"
+                               FontSize="18"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"
+                               Content="Country"/>
+                        <ComboBox Grid.Row="1"
+                                  Name="Country_combo"
+                                  Background="Transparent" 
+                                  BorderThickness="0"
+                                  VerticalContentAlignment="Center"
+                                  SelectedIndex="0"
+                                  HorizontalContentAlignment="Center"
+                                  Margin="10">
+                            <ComboBox.Style>
+                                <Style TargetType="{x:Type ComboBox}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ComboBox}">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition MaxWidth="18"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBox Name="PART_EditableTextBox"
+                                                             IsEnabled="False"
+                                                             Style="{StaticResource ComboBoxTextBoxStyle}"
+                                                             Padding="5,0,0,0"
+                                                             Height="{TemplateBinding Height}"/>
+                                                    <ToggleButton Grid.Column="1" Margin="0"
+                                                                  Height="{TemplateBinding Height}"
+                                                                  Style="{StaticResource ComboBoxButtonStyle}"                                                                          
+                                                                  Focusable="False"
+                                                                  IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                  ClickMode="Press">
+                                                        <Path Grid.Column="1"
+                                                              HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center"
+                                                              Data="M 0 0 L 4 4 L 8 0 Z"
+                                                              Fill="DodgerBlue" />
+                                                    </ToggleButton>
+                                                    <ContentPresenter Name="ContentSite"
+                                                                      Content="{TemplateBinding SelectionBoxItem}"
+                                                                      ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                                                      ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                                                      VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"
+                                                                      Margin="5,0,0,0"/>
+                                                    <Popup Name="Popup"
+                                                           Placement="Bottom"
+                                                           IsOpen="{TemplateBinding IsDropDownOpen}"
+                                                           AllowsTransparency="True" 
+                                                           Focusable="False"
+                                                           PopupAnimation="Slide">
+                                                        <Grid Name="DropDown"
+                                                              SnapsToDevicePixels="True"                
+                                                              MinWidth="{TemplateBinding ActualWidth}"
+                                                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                            <Border 
+                                                                    x:Name="DropDownBorder"
+                                                                    BorderThickness="1"
+                                                                    CornerRadius="5"
+                                                                    Background="Azure"
+                                                                    BorderBrush="Black"/>
+                                                            <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                                                <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                            </ScrollViewer>
+                                                        </Grid>
+                                                    </Popup>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.Style>
+                        </ComboBox>
+                        <!---->
+                    </Grid>
+
+                    <!-- Region -->
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               Foreground="Black"
+                               FontWeight="Bold"
+                               FontSize="18"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"
+                               Content="Region"/>
+                        <Border Grid.Row="1" 
+                                Margin="5"
+                                BorderBrush="DimGray" 
+                                BorderThickness="2"
+                                CornerRadius="30">
+                            <TextBox Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     BorderThickness="0"
+                                     FontSize="18"
+                                     Padding="22 0"
+                                     Text="Region here"
+                                     HorizontalAlignment="Left"/>
+
+
+                        </Border>
+                        <!---->
+                    </Grid>
+
+                </Grid>
+
+                <!-- Postal && Phone Number -->
+                <Border Grid.Row="4" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Postal -->
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               Foreground="Black"
+                               FontWeight="Bold"
+                               FontSize="18"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"
+                               Content="Postal Code"/>
+
+                        <Border Grid.Row="1" 
+                                Margin="5"
+                                BorderBrush="DimGray" 
+                                BorderThickness="2"
+                                CornerRadius="30">
+                            <TextBox Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     BorderThickness="0"
+                                     FontSize="18"
+                                     Padding="22 0"
+                                     Text="Postal here"
+                                     HorizontalAlignment="Left"/>
+
+                        </Border>
+                    </Grid>
+
+                    <!-- Phone number -->
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               Foreground="Black"
+                               FontWeight="Bold"
+                               FontSize="18"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"
+                               Content="Phone number"/>
+                        <Border Grid.Row="1" 
+                                Margin="5"
+                                BorderBrush="DimGray" 
+                                BorderThickness="2"
+                                CornerRadius="30">
+                            <TextBox Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     BorderThickness="0"
+                                     FontSize="18"
+                                     Padding="22 0"
+                                     Text="Phone Number here"
+                                     HorizontalAlignment="Left"/>
+
+
+                        </Border>
+                        <!---->
+                    </Grid>
+
+                </Grid>
+
+                <!-- Button -->
+                <Border Grid.Row="5"
+                            VerticalAlignment="Center"
+                            BorderBrush="Blue"
+                            CornerRadius="20"
+                            Height="30"
+                            Width="180"
+                            BorderThickness="3">
+
+                    <Button BorderThickness="0"
+                                VerticalAlignment="Center"
+                                Background="Transparent"
+                                Foreground="Blue"
+                                Content="Upload Information"/>
+                </Border>
+
+            </Grid>
+
         </Grid>
-
-
-
-    </Grid>
+    </Border>
 </Window>
