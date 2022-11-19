@@ -1,0 +1,123 @@
+﻿<Window x:Class="Sign_In_Page.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sign_In_Page"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="Bisque" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Background="SpringGreen" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0"
+                       Content="Your Profile"
+                       FontWeight="Medium"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="20"
+                       Foreground="DimGray"/>
+
+                <!-- Post, Messages, members -->
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Grid.Row="0"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               Content="86"
+                               Name="Posts"
+                               FontWeight="Bold"
+                               FontSize="14"       
+                               />
+                        <Label Grid.Row="1"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               Content="posts"
+                               FontWeight="Medium"
+                               Foreground="DimGray"
+                               />
+                    </Grid>
+                    <Grid Grid.Column="1" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               Content="1,1K"
+                               Name="Messages"
+                               FontWeight="Bold"
+                               FontSize="14"       
+                               />
+                        <Label Grid.Row="1"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               Content="messages"
+                               FontWeight="Medium"
+                               Foreground="DimGray"
+                               />
+                    </Grid>
+                    <Grid Grid.Column="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               Content="4,5K"
+                               Name="Members"
+                               FontWeight="Bold"
+                               FontSize="14"       
+                               />
+                        <Label Grid.Row="1"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Content="members"
+                               FontWeight="Medium"
+                               Foreground="DimGray"
+                               />
+                    </Grid>
+
+                </Grid>
+
+
+
+            </Grid>
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>
