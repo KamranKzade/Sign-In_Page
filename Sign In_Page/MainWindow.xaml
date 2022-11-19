@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sign_In_Page"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -26,6 +26,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
+                <!-- Profile -->
                 <Label Grid.Row="0"
                        Content="Your Profile"
                        FontWeight="Medium"
@@ -34,6 +35,35 @@
                        FontSize="20"
                        Foreground="DimGray"/>
 
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Ellipse Grid.Row="0" Margin="20 10">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/alex.png"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <Label Grid.Row="1" 
+                           Content="Alex De Souza"
+                           FontWeight="Black"
+                           Name="FullName"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+ 
+                    <Label Grid.Row="2" 
+                           Content="Football"
+                           Name="Job"
+                           FontWeight="Medium"
+                           Foreground="DimGray"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                </Grid>
+                
                 <!-- Post, Messages, members -->
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
@@ -42,12 +72,14 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
+                    <Border Grid.Column="0" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
+                    <Border Grid.Column="1" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
                     <Grid Grid.Column="0" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        
+
                         <Label Grid.Row="0"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Center"
@@ -111,7 +143,41 @@
 
                 </Grid>
 
+                <!-- Button -->
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0"
+                            VerticalAlignment="Center"
+                            BorderBrush="Blue"
+                            CornerRadius="20"
+                            Height="30"
+                            Width="180"
+                            BorderThickness="2">
 
+                        <Button BorderThickness="0"
+                                VerticalAlignment="Center"
+                                Background="Transparent"
+                                Foreground="WhiteSmoke"
+                                Content="Upload New Avatar"/>
+                    </Border>
+                    <Border Grid.Row="1"
+                            VerticalAlignment="Center"
+                            BorderBrush="WhiteSmoke"
+                            CornerRadius="20"
+                            Height="30"
+                            Width="90"
+                            BorderThickness="2">
+
+                        <Button BorderThickness="0"
+                                VerticalAlignment="Center"
+                                Background="Transparent"
+                                Foreground="DimGray"
+                                Content="Delete"/>
+                    </Border>
+                </Grid>
 
             </Grid>
 
