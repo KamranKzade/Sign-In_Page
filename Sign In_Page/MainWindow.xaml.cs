@@ -1,16 +1,49 @@
-﻿using System.Globalization;
+﻿using Microsoft.Win32;
+using Sign_In_Page.Models;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Sign_In_Page;
 
 public partial class MainWindow : Window
 {
+    public List<Human> Humen;
+
     public MainWindow()
     {
         InitializeComponent();
+        Humen = new List<Human>();
     }
 
+
+
+
+
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        OpenFileDialog op = new OpenFileDialog();
+
+        op.Title = "Select a picture";
+        op.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+
+        if (op.ShowDialog() == true)
+        {
+            //Profile_Photo.Fill = new ImageBrush(new BitmapImage(new Uri(op.FileName)));
+            profile.ImageSource = new BitmapImage(new Uri(op.FileName));
+            profile.Stretch = Stretch.UniformToFill;
+        }
+
+    }
+
+    private void Button_Delete(object sender, RoutedEventArgs e)
+    => Profile_Photo.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Kamran\source\repos\Sign In_Page\Sign In_Page\userFirst.png", UriKind.Relative)));
 
 
 
@@ -42,21 +75,7 @@ public partial class MainWindow : Window
         }
     }
 
-    private void AddMonth()
-    {
-        Month_combo.Items.Add("January");
-        Month_combo.Items.Add("February");
-        Month_combo.Items.Add("March");
-        Month_combo.Items.Add("April");
-        Month_combo.Items.Add("May");
-        Month_combo.Items.Add("June");
-        Month_combo.Items.Add("July");
-        Month_combo.Items.Add("August");
-        Month_combo.Items.Add("September");
-        Month_combo.Items.Add("October");
-        Month_combo.Items.Add("November");
-        Month_combo.Items.Add("December");
-    }
+
 
     private void AddYear()
     {
@@ -66,6 +85,68 @@ public partial class MainWindow : Window
         }
     }
 
+    private void Sign_In_click(object sender, RoutedEventArgs e)
+    {
+        Human human = new();
+
+        human.FullName = FullName_txt.Text;
+        human.Title = Title_txt.Text;
+        human.Email = Email_txt.Text;
+        human.Slogan = Slogan_txt.Text;
+
+
+        int day = int.Parse(Day_combo.SelectedItem.ToString()!);
+        int month = int.Parse(Month_combo.SelectedItem.ToString()!);
+        int year = int.Parse(Year_combo.SelectedItem.ToString()!);
+
+
+        human.Birthday = new DateTime(year, month, day);
+        human.Country = Country_combo.SelectedItem.ToString();
+        human.Region = Region_txt.Text;
+        human.PostalCode = Postal_txt.Text;
+        human.PhoneNumber = Phone_txt.Text;
+
+        human.Posts = Random.Shared.Next(0, 256);
+        human.Messages = Random.Shared.Next(0, 256);
+        human.Members = Random.Shared.Next(0, int.MaxValue/1000);
+        
+        human.PictureUrl = profile.ImageSource.ToString();
+
+        FullName.Content = human.FullName;
+        Title.Content = human.Title;
+        Posts.Content = human.Posts;
+        Messages.Content = human.Messages;
+        Members.Content = human.Members;
+        Slogan.Content = human.Slogan;
+
+
+
+        FullName_txt.IsEnabled = false;
+        Title_txt.IsEnabled = false;
+        Email_txt.IsEnabled = false;
+        Slogan_txt.IsEnabled = false;
+        Region_txt.IsEnabled = false;
+        Postal_txt.IsEnabled = false;
+        Phone_txt.IsEnabled = false;
+
+
+        Humen.Add(human);
+        
+        
+        var jsonString = System.Text.Json.JsonSerializer.Serialize(Humen);
+        File.WriteAllText("Humen.json", jsonString);
+
+       
+    }
+
+    private void AddMonth()
+    {
+        for (int i = 1; i <= 12; i++)
+        {
+            Month_combo.Items.Add(i);
+        }
+    }
 
 
 }
+

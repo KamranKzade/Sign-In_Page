@@ -53,9 +53,9 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Ellipse Grid.Row="0" Margin="20 10">
+                        <Ellipse x:Name="Profile_Photo" Grid.Row="0" Margin="20 10">
                             <Ellipse.Fill>
-                                <ImageBrush x:Name="Photo" ImageSource="/Images/alex.png"/>
+                                <ImageBrush x:Name="profile"  ImageSource="/Images/alex.png"/>
                             </Ellipse.Fill>
                         </Ellipse>
 
@@ -154,7 +154,7 @@
 
                     </Grid>
 
-                    <!-- Button -->
+                    <!-- Buttons -->
                     <Grid Grid.Row="3">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -170,10 +170,11 @@
                             BorderThickness="3">
 
                             <Button BorderThickness="0"
-                                VerticalAlignment="Center"
-                                Background="Transparent"
-                                Foreground="Blue"
-                                Content="Upload New Avatar"/>
+                                    VerticalAlignment="Center"
+                                    Background="Transparent"
+                                    Foreground="Blue"
+                                    Click="Button_Click"
+                                    Content="Upload New Avatar"/>
                         </Border>
                         <Border Grid.Row="1"
                             VerticalAlignment="Center"
@@ -184,10 +185,11 @@
                             BorderThickness="2">
 
                             <Button BorderThickness="0"
-                                VerticalAlignment="Center"
-                                Background="Transparent"
-                                Foreground="DimGray"
-                                Content="Delete"/>
+                                    VerticalAlignment="Center"
+                                    Click="Button_Delete"
+                                    Background="Transparent"
+                                    Foreground="DimGray"
+                                    Content="Delete"/>
                         </Border>
                     </Grid>
 
@@ -304,7 +306,7 @@
                                      VerticalAlignment="Center"
                                      Name="FullName_txt"
                                      BorderThickness="0"
-                                     FontSize="18"
+                                     FontSize="14"
                                      Padding="22 0"
                                      HorizontalAlignment="Left"/>
 
@@ -334,7 +336,7 @@
                             <TextBox Background="Transparent"
                                      VerticalAlignment="Center"
                                      BorderThickness="0"
-                                     FontSize="18"
+                                     FontSize="14"
                                      Name="Title_txt"
                                      Padding="22 0"
                                      HorizontalAlignment="Left"/>
@@ -366,7 +368,7 @@
                                      VerticalAlignment="Center"
                                      BorderThickness="0"
                                      Name="Email_txt"
-                                     FontSize="18"
+                                     FontSize="14"
                                      Padding="22 0"
                                      HorizontalAlignment="Left"/>
 
@@ -397,7 +399,7 @@
                                      VerticalAlignment="Center"
                                      BorderThickness="0"
                                      Name="Slogan_txt"
-                                     FontSize="18"
+                                     FontSize="14"
                                      Padding="22 0"
                                      HorizontalAlignment="Left"/>
 
@@ -861,6 +863,7 @@
                             VerticalAlignment="Center"
                             Background="Transparent"
                             Foreground="Blue"
+                            Click="Sign_In_click"
                             Content="Sign In"/>
                 </Border>
 
