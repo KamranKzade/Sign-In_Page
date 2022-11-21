@@ -54,7 +54,11 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Ellipse x:Name="Profile_Photo" Grid.Row="0" Margin="20 10">
+                        <Ellipse Grid.Row="0"
+                                 x:Name="Profile_Photo"
+                                 AllowDrop="True"
+                                 DragEnter="Profile_Photo_DragEnter"
+                                 Margin="20 10">
                             <Ellipse.Fill>
                                 <ImageBrush x:Name="profile"  ImageSource="/Images/alex.png"/>
                             </Ellipse.Fill>

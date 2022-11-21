@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace Sign_In_Page;
 
@@ -142,7 +143,7 @@ public partial class MainWindow : Window
         else
             MessageBox.Show("The email must end with mail.ru or gmail.com, yahoo.com", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
 
-        
+
 
 
         var jsonString = System.Text.Json.JsonSerializer.Serialize(Humen);
@@ -183,4 +184,18 @@ public partial class MainWindow : Window
         Country_combo.ItemsSource = list;
     }
 
+
+    private void Profile_Photo_DragEnter(object sender, DragEventArgs e)
+    {
+        if (e.Data.GetDataPresent(DataFormats.FileDrop))
+        {
+            string[] filenames = e.Data.GetData(DataFormats.FileDrop, true) as string[];
+
+            foreach (string fileName in filenames)
+            {
+                profile.ImageSource = new BitmapImage(new Uri(fileName));
+                //Profile_Photo.Fill = new ImageBrush(new BitmapImage(new Uri(fileName, UriKind.Relative)));
+            }
+        }
+    }
 }
