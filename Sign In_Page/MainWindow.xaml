@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="600"
+        Loaded="Window_Loaded"
         Width="800"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
@@ -54,7 +55,7 @@
 
                         <Ellipse Grid.Row="0" Margin="20 10">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="/alex.png"/>
+                                <ImageBrush x:Name="Photo" ImageSource="/Images/alex.png"/>
                             </Ellipse.Fill>
                         </Ellipse>
 
@@ -67,7 +68,7 @@
 
                         <Label Grid.Row="2" 
                            Content="Football"
-                           Name="Job"
+                           Name="Title"
                            FontWeight="Medium"
                            Foreground="DimGray"
                            VerticalAlignment="Center"
@@ -227,7 +228,7 @@
 
                         <Label Grid.Row="0"
                        Name="Status"
-                       Content="Ən Boyuk Fenerbagce"
+                       Content="Burada Sizin Reklaminiz ola bilerdi..."
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        FontWeight="Bold"
@@ -238,7 +239,7 @@
                             Grid.Row="1"
                             BorderThickness="1" >
 
-                            <Image Source="/nem.png"
+                            <Image Source="/Images/nem.png"
                                Stretch="Uniform"/>
                         </Border>
                     </Grid>
@@ -277,6 +278,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
                     <!-- FullName -->
@@ -294,16 +296,16 @@
                                HorizontalAlignment="Right"
                                Content="Full Name"/>
                         <Border Grid.Column="1" 
-                                Margin="15"
+                                Margin="10"
                                 BorderBrush="DimGray" 
                                 BorderThickness="2"
                                 CornerRadius="30">
                             <TextBox Background="Transparent"
                                      VerticalAlignment="Center"
+                                     Name="FullName_txt"
                                      BorderThickness="0"
                                      FontSize="18"
                                      Padding="22 0"
-                                     Text="Enter Your FullName here"
                                      HorizontalAlignment="Left"/>
 
 
@@ -325,7 +327,7 @@
                                HorizontalAlignment="Right"
                                Content="Title"/>
                         <Border Grid.Column="1" 
-                                Margin="15"
+                                Margin="10"
                                 BorderBrush="DimGray" 
                                 BorderThickness="2"
                                 CornerRadius="30">
@@ -333,8 +335,8 @@
                                      VerticalAlignment="Center"
                                      BorderThickness="0"
                                      FontSize="18"
+                                     Name="Title_txt"
                                      Padding="22 0"
-                                     Text="Enter Your Title here"
                                      HorizontalAlignment="Left"/>
 
 
@@ -356,16 +358,47 @@
                                HorizontalAlignment="Right"
                                Content="Email"/>
                         <Border Grid.Column="1" 
-                                Margin="15"
+                                Margin="10"
                                 BorderBrush="DimGray" 
                                 BorderThickness="2"
                                 CornerRadius="30">
                             <TextBox Background="Transparent"
                                      VerticalAlignment="Center"
                                      BorderThickness="0"
+                                     Name="Email_txt"
                                      FontSize="18"
                                      Padding="22 0"
-                                     Text="Enter Your Email here"
+                                     HorizontalAlignment="Left"/>
+
+
+                        </Border>
+                    </Grid>
+
+                    <!-- Slogan -->
+                    <Grid Grid.Row="3" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Foreground="Black"
+                               FontWeight="Bold"
+                               FontSize="18"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               Content="Slogan"/>
+                        <Border Grid.Column="1" 
+                                Margin="10"
+                                BorderBrush="DimGray" 
+                                BorderThickness="2"
+                                CornerRadius="30">
+                            <TextBox Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     BorderThickness="0"
+                                     Name="Slogan_txt"
+                                     FontSize="18"
+                                     Padding="22 0"
                                      HorizontalAlignment="Left"/>
 
 
@@ -637,6 +670,7 @@
                                VerticalAlignment="Bottom"
                                HorizontalAlignment="Center"
                                Content="Country"/>
+                        
                         <ComboBox Grid.Row="1"
                                   Name="Country_combo"
                                   Background="Transparent" 
@@ -707,7 +741,6 @@
                                 </Style>
                             </ComboBox.Style>
                         </ComboBox>
-                        <!---->
                     </Grid>
 
                     <!-- Region -->
@@ -733,13 +766,12 @@
                                      VerticalAlignment="Center"
                                      BorderThickness="0"
                                      FontSize="18"
+                                     Name="Region_txt"
                                      Padding="22 0"
-                                     Text="Region here"
                                      HorizontalAlignment="Left"/>
 
 
                         </Border>
-                        <!---->
                     </Grid>
 
                 </Grid>
@@ -775,9 +807,9 @@
                             <TextBox Background="Transparent"
                                      VerticalAlignment="Center"
                                      BorderThickness="0"
+                                     Name="Postal_txt"
                                      FontSize="18"
                                      Padding="22 0"
-                                     Text="Postal here"
                                      HorizontalAlignment="Left"/>
 
                         </Border>
@@ -806,13 +838,12 @@
                                      VerticalAlignment="Center"
                                      BorderThickness="0"
                                      FontSize="18"
+                                     Name="Phone_txt"
                                      Padding="22 0"
-                                     Text="Phone Number here"
                                      HorizontalAlignment="Left"/>
 
 
                         </Border>
-                        <!---->
                     </Grid>
 
                 </Grid>
@@ -827,10 +858,10 @@
                             BorderThickness="3">
 
                     <Button BorderThickness="0"
-                                VerticalAlignment="Center"
-                                Background="Transparent"
-                                Foreground="Blue"
-                                Content="Upload Information"/>
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Foreground="Blue"
+                            Content="Sign In"/>
                 </Border>
 
             </Grid>

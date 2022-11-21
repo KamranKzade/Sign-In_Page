@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Globalization;
 using System.Linq;
 using System.Windows;
 
@@ -6,17 +6,33 @@ namespace Sign_In_Page;
 
 public partial class MainWindow : Window
 {
-
     public MainWindow()
     {
         InitializeComponent();
+    }
+
+
+
+
+
+
+
+    private void Window_Loaded(object sender, RoutedEventArgs e)
+    {
+        AddCountry();
         AddDay();
         AddMonth();
         AddYear();
     }
 
+    private void AddCountry()
+    {
+        var list = CultureInfo.GetCultures(CultureTypes.SpecificCultures).
+                           Select(p => new RegionInfo(p.Name).EnglishName).
+                           Distinct().OrderBy(s => s).ToList();
 
-
+        Country_combo.ItemsSource = list;
+    }
 
     private void AddDay()
     {
@@ -41,7 +57,7 @@ public partial class MainWindow : Window
         Month_combo.Items.Add("November");
         Month_combo.Items.Add("December");
     }
-    
+
     private void AddYear()
     {
         for (int i = 1900; i < 2023; i++)
@@ -49,5 +65,7 @@ public partial class MainWindow : Window
             Year_combo.Items.Add(i.ToString());
         }
     }
+
+
 
 }
