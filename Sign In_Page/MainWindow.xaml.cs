@@ -21,6 +21,13 @@ public partial class MainWindow : Window
         Humen = new List<Human>();
     }
 
+    private void Window_Loaded(object sender, RoutedEventArgs e)
+    {
+        AddCountry();
+        AddDay();
+        AddMonth();
+        AddYear();
+    }
 
 
 
@@ -45,17 +52,126 @@ public partial class MainWindow : Window
     private void Button_Delete(object sender, RoutedEventArgs e)
     => Profile_Photo.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Kamran\source\repos\Sign In_Page\Sign In_Page\userFirst.png", UriKind.Relative)));
 
-
-
-
-
-
-    private void Window_Loaded(object sender, RoutedEventArgs e)
+    private void Sign_In_click(object sender, RoutedEventArgs e)
     {
-        AddCountry();
-        AddDay();
-        AddMonth();
-        AddYear();
+        Human human = new();
+
+        if (string.IsNullOrWhiteSpace(FullName_txt.Text))
+        {
+            MessageBox.Show("Enter FullName, please", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        if (string.IsNullOrWhiteSpace(Title_txt.Text))
+        {
+            MessageBox.Show("Enter Title, please", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        if (string.IsNullOrWhiteSpace(Email_txt.Text))
+        {
+            MessageBox.Show("Enter Email, please", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+
+        if (string.IsNullOrWhiteSpace(Slogan_txt.Text))
+        {
+            MessageBox.Show("Enter Slogan, please", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        if (string.IsNullOrWhiteSpace(Region_txt.Text))
+        {
+            MessageBox.Show("Enter Region, please", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        if (string.IsNullOrWhiteSpace(Postal_txt.Text))
+        {
+            MessageBox.Show("Enter Postal, please", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        if (string.IsNullOrWhiteSpace(Phone_txt.Text))
+        {
+            MessageBox.Show("Enter Phone number, please", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+
+
+        if (Email_txt.Text.EndsWith("@mail.ru") || Email_txt.Text.EndsWith("@gmail.com") || Email_txt.Text.EndsWith("@yahoo.com"))
+        {
+            human.FullName = FullName_txt.Text;
+            human.Title = Title_txt.Text;
+            human.Email = Email_txt.Text;
+            human.Slogan = Slogan_txt.Text;
+
+
+            int day = int.Parse(Day_combo.SelectedItem.ToString()!);
+            int month = int.Parse(Month_combo.SelectedItem.ToString()!);
+            int year = int.Parse(Year_combo.SelectedItem.ToString()!);
+
+
+            human.Birthday = new DateTime(year, month, day);
+            human.Country = Country_combo.SelectedItem.ToString();
+            human.Region = Region_txt.Text;
+            human.PostalCode = Postal_txt.Text;
+            human.PhoneNumber = Phone_txt.Text;
+
+            human.Posts = Random.Shared.Next(0, 256);
+            human.Messages = Random.Shared.Next(0, 256);
+            human.Members = Random.Shared.Next(0, int.MaxValue / 1000);
+
+            human.PictureUrl = profile.ImageSource.ToString();
+
+            FullName.Content = human.FullName;
+            Title.Content = human.Title;
+            Posts.Content = human.Posts;
+            Messages.Content = human.Messages;
+            Members.Content = human.Members;
+            Slogan.Content = human.Slogan;
+
+
+
+            FullName_txt.IsEnabled = false;
+            Title_txt.IsEnabled = false;
+            Email_txt.IsEnabled = false;
+            Slogan_txt.IsEnabled = false;
+            Region_txt.IsEnabled = false;
+            Postal_txt.IsEnabled = false;
+            Phone_txt.IsEnabled = false;
+
+
+            Humen.Add(human);
+        }
+        else
+            MessageBox.Show("The email must end with mail.ru or gmail.com, yahoo.com", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
+
+        
+
+
+        var jsonString = System.Text.Json.JsonSerializer.Serialize(Humen);
+        File.WriteAllText("Humen.json", jsonString);
+
+
+    }
+
+
+    private void AddDay()
+    {
+        for (int i = 1; i <= 31; i++)
+        {
+            Day_combo.Items.Add(i.ToString());
+        }
+    }
+    private void AddMonth()
+    {
+        for (int i = 1; i <= 12; i++)
+        {
+            Month_combo.Items.Add(i);
+        }
+    }
+    private void AddYear()
+    {
+        for (int i = 1900; i < 2023; i++)
+        {
+            Year_combo.Items.Add(i.ToString());
+        }
     }
 
     private void AddCountry()
@@ -67,86 +183,5 @@ public partial class MainWindow : Window
         Country_combo.ItemsSource = list;
     }
 
-    private void AddDay()
-    {
-        for (int i = 1; i <= 31; i++)
-        {
-            Day_combo.Items.Add(i.ToString());
-        }
-    }
-
-
-
-    private void AddYear()
-    {
-        for (int i = 1900; i < 2023; i++)
-        {
-            Year_combo.Items.Add(i.ToString());
-        }
-    }
-
-    private void Sign_In_click(object sender, RoutedEventArgs e)
-    {
-        Human human = new();
-
-        human.FullName = FullName_txt.Text;
-        human.Title = Title_txt.Text;
-        human.Email = Email_txt.Text;
-        human.Slogan = Slogan_txt.Text;
-
-
-        int day = int.Parse(Day_combo.SelectedItem.ToString()!);
-        int month = int.Parse(Month_combo.SelectedItem.ToString()!);
-        int year = int.Parse(Year_combo.SelectedItem.ToString()!);
-
-
-        human.Birthday = new DateTime(year, month, day);
-        human.Country = Country_combo.SelectedItem.ToString();
-        human.Region = Region_txt.Text;
-        human.PostalCode = Postal_txt.Text;
-        human.PhoneNumber = Phone_txt.Text;
-
-        human.Posts = Random.Shared.Next(0, 256);
-        human.Messages = Random.Shared.Next(0, 256);
-        human.Members = Random.Shared.Next(0, int.MaxValue/1000);
-        
-        human.PictureUrl = profile.ImageSource.ToString();
-
-        FullName.Content = human.FullName;
-        Title.Content = human.Title;
-        Posts.Content = human.Posts;
-        Messages.Content = human.Messages;
-        Members.Content = human.Members;
-        Slogan.Content = human.Slogan;
-
-
-
-        FullName_txt.IsEnabled = false;
-        Title_txt.IsEnabled = false;
-        Email_txt.IsEnabled = false;
-        Slogan_txt.IsEnabled = false;
-        Region_txt.IsEnabled = false;
-        Postal_txt.IsEnabled = false;
-        Phone_txt.IsEnabled = false;
-
-
-        Humen.Add(human);
-        
-        
-        var jsonString = System.Text.Json.JsonSerializer.Serialize(Humen);
-        File.WriteAllText("Humen.json", jsonString);
-
-       
-    }
-
-    private void AddMonth()
-    {
-        for (int i = 1; i <= 12; i++)
-        {
-            Month_combo.Items.Add(i);
-        }
-    }
-
 
 }
-
