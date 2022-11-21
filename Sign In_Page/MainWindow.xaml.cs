@@ -8,7 +8,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace Sign_In_Page;
 
@@ -33,6 +33,19 @@ public partial class MainWindow : Window
 
 
 
+    private void Profile_Photo_DragEnter(object sender, DragEventArgs e)
+    {
+        if (e.Data.GetDataPresent(DataFormats.FileDrop))
+        {
+            string[] filenames = e.Data.GetData(DataFormats.FileDrop, true) as string[];
+
+            foreach (string fileName in filenames)
+            {
+                profile.ImageSource = new BitmapImage(new Uri(fileName));
+                //Profile_Photo.Fill = new ImageBrush(new BitmapImage(new Uri(fileName, UriKind.Relative)));
+            }
+        }
+    }
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
@@ -97,48 +110,54 @@ public partial class MainWindow : Window
 
         if (Email_txt.Text.EndsWith("@mail.ru") || Email_txt.Text.EndsWith("@gmail.com") || Email_txt.Text.EndsWith("@yahoo.com"))
         {
-            human.FullName = FullName_txt.Text;
-            human.Title = Title_txt.Text;
-            human.Email = Email_txt.Text;
-            human.Slogan = Slogan_txt.Text;
+            if (Phone_txt.Text.StartsWith("+99451") || Phone_txt.Text.StartsWith("+99450") || Phone_txt.Text.StartsWith("+99455") || Phone_txt.Text.StartsWith("+99470") || Phone_txt.Text.StartsWith("+99477"))
+            {
+
+                human.FullName = FullName_txt.Text;
+                human.Title = Title_txt.Text;
+                human.Email = Email_txt.Text;
+                human.Slogan = Slogan_txt.Text;
 
 
-            int day = int.Parse(Day_combo.SelectedItem.ToString()!);
-            int month = int.Parse(Month_combo.SelectedItem.ToString()!);
-            int year = int.Parse(Year_combo.SelectedItem.ToString()!);
+                int day = int.Parse(Day_combo.SelectedItem.ToString()!);
+                int month = int.Parse(Month_combo.SelectedItem.ToString()!);
+                int year = int.Parse(Year_combo.SelectedItem.ToString()!);
 
 
-            human.Birthday = new DateTime(year, month, day);
-            human.Country = Country_combo.SelectedItem.ToString();
-            human.Region = Region_txt.Text;
-            human.PostalCode = Postal_txt.Text;
-            human.PhoneNumber = Phone_txt.Text;
+                human.Birthday = new DateTime(year, month, day);
+                human.Country = Country_combo.SelectedItem.ToString();
+                human.Region = Region_txt.Text;
+                human.PostalCode = Postal_txt.Text;
+                human.PhoneNumber = Phone_txt.Text;
 
-            human.Posts = Random.Shared.Next(0, 256);
-            human.Messages = Random.Shared.Next(0, 256);
-            human.Members = Random.Shared.Next(0, int.MaxValue / 1000);
+                human.Posts = Random.Shared.Next(0, 256);
+                human.Messages = Random.Shared.Next(0, 256);
+                human.Members = Random.Shared.Next(0, int.MaxValue / 1000);
 
-            human.PictureUrl = profile.ImageSource.ToString();
+                human.PictureUrl = profile.ImageSource.ToString();
 
-            FullName.Content = human.FullName;
-            Title.Content = human.Title;
-            Posts.Content = human.Posts;
-            Messages.Content = human.Messages;
-            Members.Content = human.Members;
-            Slogan.Content = human.Slogan;
-
-
-
-            FullName_txt.IsEnabled = false;
-            Title_txt.IsEnabled = false;
-            Email_txt.IsEnabled = false;
-            Slogan_txt.IsEnabled = false;
-            Region_txt.IsEnabled = false;
-            Postal_txt.IsEnabled = false;
-            Phone_txt.IsEnabled = false;
+                FullName.Content = human.FullName;
+                Title.Content = human.Title;
+                Posts.Content = human.Posts;
+                Messages.Content = human.Messages;
+                Members.Content = human.Members;
+                Slogan.Content = human.Slogan;
 
 
-            Humen.Add(human);
+
+                FullName_txt.IsEnabled = false;
+                Title_txt.IsEnabled = false;
+                Email_txt.IsEnabled = false;
+                Slogan_txt.IsEnabled = false;
+                Region_txt.IsEnabled = false;
+                Postal_txt.IsEnabled = false;
+                Phone_txt.IsEnabled = false;
+
+
+                Humen.Add(human);
+            }
+            else
+                MessageBox.Show("The Phone number's must start with +99450, +99451, +99455, +99470, +99477", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         else
             MessageBox.Show("The email must end with mail.ru or gmail.com, yahoo.com", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -174,7 +193,6 @@ public partial class MainWindow : Window
             Year_combo.Items.Add(i.ToString());
         }
     }
-
     private void AddCountry()
     {
         var list = CultureInfo.GetCultures(CultureTypes.SpecificCultures).
@@ -184,18 +202,4 @@ public partial class MainWindow : Window
         Country_combo.ItemsSource = list;
     }
 
-
-    private void Profile_Photo_DragEnter(object sender, DragEventArgs e)
-    {
-        if (e.Data.GetDataPresent(DataFormats.FileDrop))
-        {
-            string[] filenames = e.Data.GetData(DataFormats.FileDrop, true) as string[];
-
-            foreach (string fileName in filenames)
-            {
-                profile.ImageSource = new BitmapImage(new Uri(fileName));
-                //Profile_Photo.Fill = new ImageBrush(new BitmapImage(new Uri(fileName, UriKind.Relative)));
-            }
-        }
-    }
 }
