@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sign_In_Page"
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="SignIn" 
         Height="600"
         Loaded="Window_Loaded"
         Width="800"
+        Icon="/Images/icons8-password-window-100.png"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Border BorderBrush="DimGray"

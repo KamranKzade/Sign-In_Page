@@ -10,10 +10,12 @@
 
   <ItemGroup>
     <None Remove="alex.png" />
+    <None Remove="icons8-password-window-100.png" />
     <None Remove="nem.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\icons8-password-window-100.png" />
     <Resource Include="Images\alex.png" />
     <Resource Include="Images\nem.png" />
   </ItemGroup>
