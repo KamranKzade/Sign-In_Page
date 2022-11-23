@@ -12,12 +12,13 @@
     <None Remove="alex.png" />
     <None Remove="icons8-password-window-100.png" />
     <None Remove="nem.png" />
+    <None Remove="ok.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\icons8-password-window-100.png" />
     <Resource Include="Images\alex.png" />
-    <Resource Include="Images\nem.png" />
+    <Resource Include="Images\ok.png" />
   </ItemGroup>
 
 </Project>

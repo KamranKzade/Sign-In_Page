@@ -11,24 +11,25 @@
         Width="800"
         Icon="/Images/icons8-password-window-100.png"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize">
-    <Border BorderBrush="DimGray"
+        ResizeMode="NoResize"
+        Background="#344966">
+    <Border BorderBrush="#EF271B"
             Margin="10"
             BorderThickness="2">
-        <Grid >
+        <Grid Background="#D9E5D6">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Images && Name && Status && Posts && messages && members && Button -->
+            <!-- +++ Images && Name && Status && Posts && messages && members && Button -->
             <Grid  Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2.5*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <!-- Images Name Job Post Messages Members Buttons-->
+                <!-- +++ Images Name Job Post Messages Members Buttons-->
                 <Grid Grid.Row="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -37,16 +38,16 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <!-- Profile -->
+                    <!-- +++ Profile -->
                     <Label Grid.Row="0"
                        Content="Your Profile"
                        FontWeight="Medium"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        FontSize="20"
-                       Foreground="DimGray"/>
+                       Foreground="#E28413"/>
 
-                    <!-- Images Name Job -->
+                    <!-- +++ Images Name Job -->
                     <Grid Grid.Row="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="4*"/>
@@ -65,22 +66,23 @@
                         </Ellipse>
 
                         <Label Grid.Row="1" 
-                           Content="Alex De Souza"
-                           FontWeight="Black"
-                           Name="FullName"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
+                               Content="Alex De Souza"
+                               FontWeight="Black"
+                               Foreground="#020887"
+                               Name="FullName"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
 
                         <Label Grid.Row="2" 
                            Content="Football"
                            Name="Title"
                            FontWeight="Medium"
-                           Foreground="DimGray"
+                           Foreground="#020887"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
                     </Grid>
 
-                    <!-- Post, Messages, members -->
+                    <!-- +++ Post, Messages, members -->
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -88,8 +90,11 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Border  Grid.Column="0" Height="45" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
-                        <Border Grid.Column="1" Height="45" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
+
+                        <Border  Grid.Column="0" Height="45" BorderBrush="#EF271B" BorderThickness="0 0 2 0"/>
+                        <Border Grid.Column="1" Height="45" BorderBrush="#EF271B" BorderThickness="0 0 2 0"/>
+
+                        <!-- +++ Posts -->
                         <Grid Grid.Column="0" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -97,21 +102,24 @@
                             </Grid.RowDefinitions>
 
                             <Label Grid.Row="0"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Content="86"
-                               Name="Posts"
-                               FontWeight="Bold"
-                               FontSize="14"       
+                                   VerticalAlignment="Bottom"
+                                   HorizontalAlignment="Center"
+                                   Content="86"
+                                   Foreground="#020887"
+                                   Name="Posts"
+                                   FontWeight="Bold"
+                                   FontSize="14"       
                                />
                             <Label Grid.Row="1"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Center"
                                Content="posts"
                                FontWeight="Medium"
-                               Foreground="DimGray"
+                               Foreground="#020887"
                                />
                         </Grid>
+
+                        <!-- +++ Messages -->
                         <Grid Grid.Column="1" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -119,21 +127,25 @@
                             </Grid.RowDefinitions>
 
                             <Label Grid.Row="0"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Content="1,1K"
-                               Name="Messages"
-                               FontWeight="Bold"
-                               FontSize="14"       
+                                   VerticalAlignment="Bottom"
+                                   HorizontalAlignment="Center"
+                                   Content="1,1K"
+                                   Foreground="#020887"
+                                   Name="Messages"
+                                   FontWeight="Bold"
+                                   FontSize="14"       
                                />
                             <Label Grid.Row="1"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Center"
                                Content="messages"
                                FontWeight="Medium"
-                               Foreground="DimGray"
+                               Foreground="#020887"
                                />
                         </Grid>
+
+
+                        <!-- +++ Members -->
                         <Grid Grid.Column="2" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -141,25 +153,26 @@
                             </Grid.RowDefinitions>
 
                             <Label Grid.Row="0"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Content="4,5K"
-                               Name="Members"
-                               FontWeight="Bold"
-                               FontSize="14"       
+                                   VerticalAlignment="Bottom"
+                                   HorizontalAlignment="Center"
+                                   Content="4,5K"
+                                   Foreground="#020887"
+                                   Name="Members"
+                                   FontWeight="Bold"
+                                   FontSize="14"       
                                />
                             <Label Grid.Row="1"
-                               VerticalAlignment="Top"
-                               HorizontalAlignment="Center"
-                               Content="members"
-                               FontWeight="Medium"
-                               Foreground="DimGray"
+                                   VerticalAlignment="Top"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#020887"
+                                   Content="members"
+                                   FontWeight="Medium"
                                />
                         </Grid>
 
                     </Grid>
 
-                    <!-- Buttons -->
+                    <!-- +++ Buttons -->
                     <Grid Grid.Row="3">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -183,7 +196,7 @@
                         </Border>
                         <Border Grid.Row="1"
                             VerticalAlignment="Center"
-                            BorderBrush="WhiteSmoke"
+                            BorderBrush="Azure"
                             CornerRadius="20"
                             Height="30"
                             Width="90"
@@ -200,7 +213,7 @@
 
                 </Grid>
 
-                <!-- Slogan && Status -->
+                <!-- +++ Slogan && Status -->
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -215,14 +228,15 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Row="0"
-                           Name="Slogan"
-                           Content="Your Slogan"
-                           FontWeight="Black"
-                           VerticalAlignment="Bottom"
-                           HorizontalAlignment="Center"/>
+                               Name="Slogan"
+                               Content="Your Slogan"
+                               Foreground="#020887"
+                               FontWeight="Black"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"/>
                         <Label Grid.Row="1"
                            Content="(Just start typing to edit)"
-                           Foreground="LightGray"
+                           Foreground="#828A95"
                            FontWeight="Black"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
@@ -234,26 +248,24 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Row="0"
-                       Name="Status"
-                       Content="Burada Sizin Reklaminiz ola bilerdi..."
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontWeight="Bold"
-                       Foreground="LightGray"/>
+                               Name="Status"
+                               Foreground="#828A95"
+                               FontSize="10"
+                               Content="Burada Sizin Reklaminiz ola bilerdi..."
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontWeight="Bold"/>
 
-                        <Border Margin="5"
-                            BorderBrush="Transparent" 
-                            Grid.Row="1"
-                            BorderThickness="1" >
 
-                            <Image Source="/Images/nem.png"
+
+                        <Image Grid.Row="1"
+                               Source="/Images/ok.png"
                                Stretch="Uniform"/>
-                        </Border>
                     </Grid>
                 </Grid>
 
-                <Border Grid.Row="0" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
-                <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0 2 2 0"/>
+                <Border Grid.Row="0" BorderBrush="#EF271B" BorderThickness="0 0 2 0"/>
+                <Border Grid.Row="1" BorderBrush="#EF271B" BorderThickness="0 2 2 0"/>
             </Grid>
 
             <Grid  Grid.Column="1">
@@ -267,11 +279,11 @@
                 </Grid.RowDefinitions>
 
                 <!-- Settings -->
-                <Border Grid.Row="0" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                <Border Grid.Row="0" BorderBrush="#EF271B" BorderThickness="0 0 0 2"/>
                 <Label Grid.Row="0"
                        Content="Edit Your Personal Settings"
                        FontWeight="Medium"
-                       Foreground="DimGray"
+                       Foreground="#E28413"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
                        Padding="15 0"
@@ -279,7 +291,7 @@
                        />
 
                 <!-- FullNAme && Title && Email -->
-                <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                <Border Grid.Row="1" BorderBrush="#EF271B" BorderThickness="0 0 0 2"/>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -296,7 +308,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Column="0"
-                               Foreground="Black"
+                               Foreground="#6E9887"
                                FontWeight="Bold"
                                FontSize="18"
                                VerticalAlignment="Center"
@@ -304,7 +316,7 @@
                                Content="Full Name"/>
                         <Border Grid.Column="1" 
                                 Margin="10"
-                                BorderBrush="DimGray" 
+                                BorderBrush="#D72638" 
                                 BorderThickness="2"
                                 CornerRadius="30">
                             <TextBox Background="Transparent"
@@ -327,7 +339,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Column="0"
-                               Foreground="Black"
+                               Foreground="#6E9887"
                                FontWeight="Bold"
                                FontSize="18"
                                VerticalAlignment="Center"
@@ -335,7 +347,7 @@
                                Content="Title"/>
                         <Border Grid.Column="1" 
                                 Margin="10"
-                                BorderBrush="DimGray" 
+                                BorderBrush="#D72638" 
                                 BorderThickness="2"
                                 CornerRadius="30">
                             <TextBox Background="Transparent"
@@ -358,7 +370,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Column="0"
-                               Foreground="Black"
+                               Foreground="#6E9887"
                                FontWeight="Bold"
                                FontSize="18"
                                VerticalAlignment="Center"
@@ -366,7 +378,7 @@
                                Content="Email"/>
                         <Border Grid.Column="1" 
                                 Margin="10"
-                                BorderBrush="DimGray" 
+                                BorderBrush="#D72638" 
                                 BorderThickness="2"
                                 CornerRadius="30">
                             <TextBox Background="Transparent"
@@ -389,7 +401,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Column="0"
-                               Foreground="Black"
+                               Foreground="#6E9887"
                                FontWeight="Bold"
                                FontSize="18"
                                VerticalAlignment="Center"
@@ -397,7 +409,7 @@
                                Content="Slogan"/>
                         <Border Grid.Column="1" 
                                 Margin="10"
-                                BorderBrush="DimGray" 
+                                BorderBrush="#D72638" 
                                 BorderThickness="2"
                                 CornerRadius="30">
                             <TextBox Background="Transparent"
@@ -415,7 +427,7 @@
                 </Grid>
 
                 <!-- Birthday -->
-                <Border Grid.Row="2" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                <Border Grid.Row="2" BorderBrush="#EF271B" BorderThickness="0 0 0 2"/>
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -423,7 +435,7 @@
                     </Grid.RowDefinitions>
 
                     <Label Grid.Row="0"
-                           Foreground="Black"
+                           Foreground="#6E9887"
                            FontWeight="Bold"
                            FontSize="18"
                            VerticalAlignment="Bottom"
@@ -656,7 +668,7 @@
                 </Grid>
 
                 <!-- Country Region -->
-                <Border Grid.Row="3" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                <Border Grid.Row="3" BorderBrush="#EF271B" BorderThickness="0 0 0 2"/>
                 <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -671,13 +683,13 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Row="0"
-                               Foreground="Black"
+                               Foreground="#6E9887"
                                FontWeight="Bold"
                                FontSize="18"
                                VerticalAlignment="Bottom"
                                HorizontalAlignment="Center"
                                Content="Country"/>
-                        
+
                         <ComboBox Grid.Row="1"
                                   Name="Country_combo"
                                   Background="Transparent" 
@@ -758,7 +770,7 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Row="0"
-                               Foreground="Black"
+                               Foreground="#6E9887"
                                FontWeight="Bold"
                                FontSize="18"
                                VerticalAlignment="Bottom"
@@ -766,7 +778,7 @@
                                Content="Region"/>
                         <Border Grid.Row="1" 
                                 Margin="5"
-                                BorderBrush="DimGray" 
+                                BorderBrush="#D72638" 
                                 BorderThickness="2"
                                 CornerRadius="30">
                             <TextBox Background="Transparent"
@@ -784,7 +796,7 @@
                 </Grid>
 
                 <!-- Postal && Phone Number -->
-                <Border Grid.Row="4" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                <Border Grid.Row="4" BorderBrush="#EF271B" BorderThickness="0 0 0 2"/>
                 <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -799,7 +811,7 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Row="0"
-                               Foreground="Black"
+                               Foreground="#6E9887"
                                FontWeight="Bold"
                                FontSize="18"
                                VerticalAlignment="Bottom"
@@ -808,7 +820,7 @@
 
                         <Border Grid.Row="1" 
                                 Margin="5"
-                                BorderBrush="DimGray" 
+                                BorderBrush="#D72638" 
                                 BorderThickness="2"
                                 CornerRadius="30">
                             <TextBox Background="Transparent"
@@ -830,7 +842,7 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Row="0"
-                               Foreground="Black"
+                               Foreground="#6E9887"
                                FontWeight="Bold"
                                FontSize="18"
                                VerticalAlignment="Bottom"
@@ -838,7 +850,7 @@
                                Content="Phone number"/>
                         <Border Grid.Row="1" 
                                 Margin="5"
-                                BorderBrush="DimGray" 
+                                BorderBrush="#D72638" 
                                 BorderThickness="2"
                                 CornerRadius="30">
                             <TextBox Background="Transparent"
@@ -858,7 +870,7 @@
                 <!-- Button -->
                 <Border Grid.Row="5"
                             VerticalAlignment="Center"
-                            BorderBrush="Blue"
+                            BorderBrush="#297373"
                             CornerRadius="20"
                             Height="30"
                             Width="180"
@@ -867,7 +879,7 @@
                     <Button BorderThickness="0"
                             VerticalAlignment="Center"
                             Background="Transparent"
-                            Foreground="Blue"
+                            Foreground="#090909"
                             Click="Sign_In_click"
                             Content="Sign In"/>
                 </Border>
